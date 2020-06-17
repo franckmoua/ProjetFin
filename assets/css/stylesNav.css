@@ -8,7 +8,7 @@
 
 }
 .sign-top-right{
-
+    text-decoration: none;
     flex-direction: row-reverse;
 
 }
