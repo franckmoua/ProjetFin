@@ -1,0 +1,48 @@
+*{
+    font-family: "Segoe UI";
+    color: #848181;
+}
+.logo{
+    width: 15%;
+
+
+}
+.sign-top-right{
+
+    flex-direction: row-reverse;
+
+}
+
+.logo-register{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.hr-header{
+    width: 80%;
+}
+
+.container-header{
+    display: flex;
+}
+
+.container-nav{
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.nav-category{
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+.nav-list a{
+    text-decoration: none;
+
+}
