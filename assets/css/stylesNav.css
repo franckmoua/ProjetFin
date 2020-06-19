@@ -2,11 +2,18 @@
     font-family: "Segoe UI";
     color: #848181;
 }
+
+header{
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    background-color: white;
+}
+
 .logo{
     width: 15%;
-
-
 }
+
 .sign-top-right{
     text-decoration: none;
     flex-direction: row-reverse;
@@ -16,6 +23,7 @@
 .logo-register{
     display: flex;
     justify-content: space-between;
+    margin: 20px auto 40px;
 
 }
 
@@ -25,6 +33,7 @@
 
 .container-header{
     display: flex;
+
 }
 
 .container-nav{
@@ -38,6 +47,7 @@
 .nav-category{
     display: flex;
     justify-content: space-evenly;
+    margin: 30px auto;
 
 
 }

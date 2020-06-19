@@ -5,6 +5,7 @@ require('models/Category.php');
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'form':
+            $pageTitle='Sign Up Page';
             include 'views/register.php';
             break;
         case 'signup':
@@ -21,23 +22,26 @@ if (isset($_GET['action'])) {
                 if(empty($_POST['last_name'])){
                     $_SESSION['messages'][] = 'Le champ last name est obligatoire !';
                 }
-
+                header('Location:index.php?p=register&action=form');
+                exit;
             }
-
-            elseif (isset($_POST['email'])){
-
-
-            }
-
             else{
+                $user = getUser();
+                if($user == true){
+                    header('Location:index.php?p=register&action=form');
+                    $_SESSION['messages'][] = 'The email exist already';
+                    exit;
+                }
                 $resultInsert = insertDB();
-
-
-                $_SESSION['messages'][] = $resultInsert ? 'You are succesfully signed-up !' : 'Error while trying to sign up';
+                if($resultInsert == true){
+                    $_SESSION['messages'][] = 'You are succesfully signed-up !';
+                    if($user){
+                        $_SESSION['user'][] = $user;
+                    }
+                }
                 header('location:index.php');
                 exit;
             }
-
             break;
     }
 }

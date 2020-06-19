@@ -1,15 +1,5 @@
 <?php
 
-function checkEmailExist()
-{
-    $db = dbConnect();
-
-    $query = $db->query('SELECT email * FROM users WHERE ID = $_POST');
-    $email =  $query->fetch();
-
-    return $email;
-}
-
 function insertDB()
 {
     $db = dbConnect();
@@ -23,5 +13,21 @@ function insertDB()
             hash('md5',$_POST['password']),
         ]
     );
+    return $result;
+}
+
+function getUser()
+{
+    $db = dbConnect();
+
+    $query = $db->prepare('SELECT * FROM users WHERE email = ?');
+    $query->execute(
+        [
+            $_POST['email'],
+        ]
+    );
+
+    $result = $query->fetch();
+
     return $result;
 }
