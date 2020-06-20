@@ -1,0 +1,37 @@
+body{
+    background-image: url("../images/product/background10.jpg");
+    background-size: cover;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    border: 2px solid ;
+    box-shadow: 0 15px 40px 0 rgba(0,0,0,0.5);
+    background-color: #fff;
+
+}
+.title{
+    padding: 10% 0 20px;
+}
+
+.wrapper .left{
+    width: 50%;
+    padding: 30px 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.wrapper .left a{
+    color: #848181;
+    text-decoration: none;
+
+}
+
+.wrapper .right{
+    width: 50%;
+    padding: 30px 25px;
+    box-sizing: border-box;
+}
+

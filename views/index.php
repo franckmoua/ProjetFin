@@ -25,7 +25,7 @@
             <img src="assets/images/slideshow/Nouveau-produit-pink.jpg" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="assets/images/slideshow/car2.jpg" style="width:100%">
+            <img src="assets/images/slideshow/skincare3.jpg" style="width:100%">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -39,14 +39,19 @@
     </div>
 </section>
 
-<section>
+<section class="trending">
     <h2>Trending now</h2>
+    <div>
     <?php foreach ($products as $product) : ?>
 
-        <img src="assets/images/product/<?= $product['image'] ?>" alt="<?= $product['image'] ?>">
-        <a href=""><?= $product['name'] ?> </a>
-        <p><?= $product['price'] ?>€</p>
+    <img src="assets/images/product/<?= $product['image'] ?>" alt="<?= $product['image'] ?>" class="trending-images"><br>
+    <figure class="product-im">
+       <figcaption><a href="index.php?p=item&product_id=<?= $product['id'] ?>"><?= $product['name'] ?></a></figcaption><br>
+    </figure>
+    <p class="price"><?= $product['price'] ?>€</p>
     <?php endforeach; ?>
+    </div>
+
 </section>
 
 <script>

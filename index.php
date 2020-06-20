@@ -11,6 +11,10 @@ if(isset($_GET['p'])){
             require 'controllers/productController.php';
             break;
 
+        case'item':
+            require'controllers/productItemController.php';
+            break;
+
         case 'register' :
             require 'controllers/registerController.php';
             break;
@@ -33,6 +37,7 @@ if(isset($_GET['p'])){
 
         case'cart':
             require 'controllers/cartController.php';
+            break;
 
         default :
             require 'controllers/indexController.php';

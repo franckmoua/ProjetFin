@@ -1,7 +1,6 @@
 <?php
 require_once 'models/Product.php';
 require_once 'models/Category.php';
-
 $selectedProduct = false;
 
 if(isset($_GET['product_id']) ){

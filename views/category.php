@@ -12,14 +12,16 @@
 
 <section class="page-height">
 <div class="position-height">
-    <h1><?= $category['name']; ?></h1>
+    <?php foreach ($productCategories as $productCategory) : ?>
+
     <br><br>
 
-    <?php foreach ($productCategories as $productCategory) : ?>
-        <p>nom du produit : <a href="index.php?p=product&product_id=<?= $productCategory['category_id'] ?>"><?= $productCategory['name'] ?></a></p>
+
+        <img src="assets/images/product/<?= $productCategory['image'] ?>" alt="<?= $productCategory['image'] ?>" class="trending-images">
+        <p><a href="index.php?p=product&product_id=<?= $productCategory['category_id'] ?>"><?= $productCategory['name'] ?></a></p>
+        <p class="price"><?= $productCategory['price'] ?>€</p>
 
     <?php endforeach; ?>
-
 
 </div>
 </section>

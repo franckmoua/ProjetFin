@@ -30,6 +30,7 @@ function getProducts()
     }
 }
 
+
 function getImage(){
 
 }
