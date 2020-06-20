@@ -19,13 +19,13 @@ function getUserSession()
 function getUserInformations($id)
 {
 
-        $db = dbConnect();
+    $db = dbConnect();
 
-        $get_user = $db->prepare('SELECT * FROM users WHERE id ='.$id);
+    $get_user = $db->prepare('SELECT * FROM users WHERE id =' . $id);
 
-        $userInfo =  $get_user->fetchAll();
+    $userInfo = $get_user->fetchAll();
 
-        return $userInfo;
+    return $userInfo;
 }
 
 

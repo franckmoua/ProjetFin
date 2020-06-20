@@ -5,12 +5,12 @@ function insertDB()
     $db = dbConnect();
 
     $query = $db->prepare('INSERT INTO users(first_name, last_name, email, password) VALUE (?,?,?,?) ');
-    $result= $query->execute(
+    $result = $query->execute(
         [
             $_POST['first_name'],
             $_POST['last_name'],
             $_POST['email'],
-            hash('md5',$_POST['password']),
+            hash('md5', $_POST['password']),
         ]
     );
     return $result;

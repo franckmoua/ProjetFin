@@ -1,42 +1,40 @@
 <?php
-require'models/UserProfile.php';
-require'models/Register.php';
-$user =  $_SESSION['user'];
+require 'models/UserProfile.php';
+require 'models/Register.php';
+$user = $_SESSION['user'];
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case'profile':
-            $pageTitle='User Profile';
+            $pageTitle = 'User Profile';
             $userInfos = getUserInformations($_SESSION['user']['id']);
-            include'views/userProfile.php';
+            include 'views/userProfile.php';
             break;
 
         case'order':
-            $pageTitle="list of order";
+            $pageTitle = "list of order";
             break;
 
         case'edit':
-            $pageTitle="Status edit";
-            if(!empty($_POST)){
-                if(empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['email'])){
+            $pageTitle = "Status edit";
+            if (!empty($_POST)) {
+                if (empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['email'])) {
 
-                    if(empty($_POST['first_name'])){
+                    if (empty($_POST['first_name'])) {
                         $_SESSION['messages'][] = 'First name is required';
                     }
-                    if(empty($_POST['last_name'])){
+                    if (empty($_POST['last_name'])) {
                         $_SESSION['messages'][] = 'Last name is required';
                     }
-                    if(empty($_POST['email'])){
+                    if (empty($_POST['email'])) {
                         $_SESSION['messages'][] = 'Email is required';
                     }
 
                     $_SESSION['old_inputs'] = $_SESSION['user'];
                     header('Location:index.php?p=controller=userProfile&action=edit=' . $_SESSION['id']);
                     exit;
-                }
-
-                else{
+                } else {
                     $user = getUser();
-                    if($user == true) {
+                    if ($user == true) {
                         header('Location:index.php?p=controller=userProfile&action=form');
                         $_SESSION['messages'][] = 'The email exist already';
                         exit;
@@ -47,7 +45,7 @@ if (isset($_GET['action'])) {
                     exit;
                 }
             }
-            include'views/userForm.php';
+            include 'views/userForm.php';
             break;
 
         case'disconnect':
