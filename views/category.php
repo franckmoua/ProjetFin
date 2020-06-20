@@ -9,15 +9,20 @@
 </head>
 <?php require ('partials/header.php'); ?>
 <body>
-<div class="position-heigth">
-<a href="index.php">retour à l'index</a>
-<?= $category['name']; ?>
 
-<?php foreach ($productCategories as $productCategory) : ?>
-    <p>nom du produit : <a href="index.php?p=product&product_id=<?= $productCategory['category_id'] ?>"><?= $productCategory['name'] ?></a></p>
-<?php endforeach; ?>
+<section class="page-height">
+<div class="position-height">
+    <h1><?= $category['name']; ?></h1>
+    <br><br>
 
-<?php require ('partials/footer.php'); ?>
+    <?php foreach ($productCategories as $productCategory) : ?>
+        <p>nom du produit : <a href="index.php?p=product&product_id=<?= $productCategory['category_id'] ?>"><?= $productCategory['name'] ?></a></p>
+
+    <?php endforeach; ?>
+
+
 </div>
+</section>
 </body>
+<?php require ('partials/footer.php'); ?>
 </html>

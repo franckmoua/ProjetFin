@@ -29,3 +29,7 @@ function getProducts()
         return false;
     }
 }
+
+function getImage(){
+
+}

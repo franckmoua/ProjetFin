@@ -11,13 +11,24 @@ header{
 }
 
 .logo{
-    width: 15%;
+    width: 30%;
 }
-
+.top-right{
+    margin-left: 25%;
+}
 .sign-top-right{
+
     text-decoration: none;
     flex-direction: row-reverse;
 
+}
+
+.logo-top-left{
+
+}
+
+.sign-top-right img{
+    width: 4%;
 }
 
 .logo-register{
@@ -25,6 +36,12 @@ header{
     justify-content: space-between;
     margin: 20px auto 40px;
 
+
+}
+
+.logo-register a{
+    width: 50%;
+    margin: 0 0 0 150px;
 }
 
 .hr-header{
@@ -40,7 +57,6 @@ header{
 
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
     justify-content: center;
 }
 

@@ -11,16 +11,16 @@ if (isset($_GET['action'])) {
         case 'signup':
             if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['first_name']) || empty($_POST['last_name'])){
                 if(empty($_POST['email'])){
-                    $_SESSION['messages'][] = 'Le champ email est obligatoire !';
+                    $_SESSION['messages'][] = 'Email is required ';
                 }
                 if(empty($_POST['password'])){
-                    $_SESSION['messages'][] = 'Le champ password est obligatoire !';
+                    $_SESSION['messages'][] = 'Password is required ';
                 }
                 if(empty($_POST['first_name'])){
-                    $_SESSION['messages'][] = 'Le champ first name est obligatoire !';
+                    $_SESSION['messages'][] = 'First name is required ';
                 }
                 if(empty($_POST['last_name'])){
-                    $_SESSION['messages'][] = 'Le champ last name est obligatoire !';
+                    $_SESSION['messages'][] = 'Last name is required ';
                 }
                 header('Location:index.php?p=register&action=form');
                 exit;

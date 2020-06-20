@@ -23,6 +23,17 @@ if(isset($_GET['p'])){
             require 'controllers/userProfileController.php';
             break;
 
+        case'userForm' :
+            require'controllers/userFormController.php';
+            break;
+
+        case'index':
+            require'controllers/indexController.php';
+            break;
+
+        case'cart':
+            require 'controllers/cartController.php';
+
         default :
             require 'controllers/indexController.php';
     }

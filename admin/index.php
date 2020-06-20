@@ -7,17 +7,14 @@ require ('../helpers.php');
 
 if(isset($_GET['controller'])){
 	switch ($_GET['controller']){
-		case 'artists' :
-            require 'controllers/artistController.php';
+		case 'product' :
+            require 'controllers/productController.php';
 			break;
-		case 'labels':
-			require 'controllers/labelController.php';
+		case 'category':
+			require 'controllers/categoryController.php';
 		break;
-		case 'albums' :
-			require 'controllers/albumController.php';
-		break;
-		case 'songs' :
-			require 'controllers/songController.php';
+		case 'userProfile' :
+			require 'controllers/userProfileController.php';
 		break;
 
         default :

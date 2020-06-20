@@ -1,6 +1,6 @@
 <link href="assets/css/styles.css" rel="stylesheet">
 <div class="container"></div>
-<footer>
+<footer class="footer">
     <!-- footer main -->
     <section class="footer-main">
         <div class="footer-main-item">

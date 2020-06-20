@@ -32,7 +32,10 @@
 </section>
 
 <section>
-
+    <h2>Trending now</h2>
+    <?php foreach ($products as $product) : ?>
+       <img src="assets/images/product/<?= $product['image'] ?>" alt="<?= $product['image'] ?>">
+    <?php endforeach; ?>
 </section>
 
 <script>

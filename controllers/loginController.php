@@ -6,12 +6,10 @@ $categories = getAllCategories();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
-
         case'signinForm':
             $pageTitle='Sign In Page';
             include ('views/login.php');
             break;
-
 
         case'signin':
         if (!empty($_POST)) {
@@ -30,16 +28,7 @@ if (isset($_GET['action'])) {
                     $user = getUser();
                     $_SESSION['messages'][] =  'You are succesfully signed-in !';
                             if($user){
-                                $_SESSION['user'] = array();
-                                 $_SESSION['user'] =
-                                     [
-                                     'id' => $user['id'],
-                                    'first_name' => $user['first_name'],
-                                    'last_name' => $user['last_name'],
-                                    'email' => $user['email'],
-                                    'password' => $user['password'],
-                                    'is_admin' => $user['is_admin']
-                                    ];
+                                 $_SESSION['user'] = $user;
                             }
                     header('location:index.php');
                     exit;
@@ -50,13 +39,6 @@ if (isset($_GET['action'])) {
             }
         }
         break;
-
-        case'disconnect':
-            if (isset($_GET['action']) && $_GET['action'] == 'disconnect') {
-                unset($_SESSION['user']);
-                session_destroy();
-            }
-            break;
     }
 }
 

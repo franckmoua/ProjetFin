@@ -31,3 +31,19 @@ function getUser()
 
     return $result;
 }
+
+function getUserName()
+{
+    $db = dbConnect();
+
+    $query = $db->prepare('SELECT * FROM users WHERE id = ?');
+    $query->execute(
+        [
+            $_SESSION['first_name']
+        ]
+    );
+
+    $result = $query->fetch();
+
+    return $result;
+}
