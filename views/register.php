@@ -1,35 +1,51 @@
-<a href="index.php">retour à l'index</a>
-<head><title><?= $pageTitle; ?></title></head>
-
-
-<?php if(isset($_SESSION['messages'])): ?>
-    <div>
-        <?php foreach($_SESSION['messages'] as $message): ?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/stylesRegister.css" rel="stylesheet">
+    <title><?= $pageTitle; ?></title>
+</head>
+<a href="index.php">Return</a>
+<body>
+<?php if (isset($_SESSION['messages'])): ?>
+    <div class="messages">
+        <?php foreach ($_SESSION['messages'] as $message): ?>
             <h3><?= $message ?></h3>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
-<form action="index.php?p=register&action=signup" method="post">
+<div class="title"></div>
+<div class="container">
+    <div class="left"></div>
+    <div class="right">
+        <form action="index.php?p=register&action=signup" method="post">
+            <h1>Sign up</h1>
+            <p>Email</p>
+            <input id="email" type="email" name="email" value=""><br>
 
-    <label for="email">Email* :</label>
-    <input id="email" type="email" name="email" value="" ><br>
+            <p>Password</p>
+            <input id="password" type="password" name="password"><br>
 
-    <label for="password">Password* :</label>
-    <input id="password" type="password" name="password" ><br>
+            <p>First Name</p>
+            <input id="first_name" type="first_name" name="first_name"><br>
 
-    <label for="first_name">First name* :</label>
-    <input id="first_name" type="first_name" name="first_name" ><br>
-
-    <label for="last_name">Last name* :</label>
-    <input id="last_name" type="last_name" name="last_name" ><br>
+            <p>Last Name</p>
+            <input id="last_name" type="last_name" name="last_name"><br>
 
 
-    <button type="submit">Sign up</button>
+            <input type="submit" class="btn" value="Sign up" >
+            <p>
+                Already a member? <a href="index.php?p=login&action=signinForm">Sign in</a>
+            </p>
+        </form>
 
-</form>
-<small>* champs obligatoire</small>
-<br><br>
 
-    <p>
-        Already a member? <a href="index.php?p=login&action=signinForm">Sign in</a>
-    </p>
+    </div>
+</div>
+</body>
+</html>
+
+

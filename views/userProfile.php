@@ -20,6 +20,7 @@
 <h2><?= $_SESSION['user']['first_name'] ?>'s Profile </h2>
 
 <div>
+    
 <a href="index.php?p=userProfile&action=edit">Edit Profile</a>
 
 <a href="index.php?p=userProfile&action=disconnect">Disconnect</a>

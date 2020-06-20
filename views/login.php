@@ -10,27 +10,36 @@
 </head>
 
 <body>
-<?php if(isset($_SESSION['messages'])): ?>
-    <div>
-        <?php foreach($_SESSION['messages'] as $message): ?>
+<a href="index.php">Return</a>
+
+<?php if (isset($_SESSION['messages'])): ?>
+    <div class="messages">
+        <?php foreach ($_SESSION['messages'] as $message): ?>
             <h3><?= $message ?></h3>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
-<section class="loginBox">
-    <div class="login">
-        <form action="index.php?p=login&action=signin" method="post">
-            <div class="inputs">
-                <label for="email">Email :</label>
-                <input id="email" type="email" name="email" ><br>
 
-                <label for="password">Password :</label>
-                <input id="password" type="password" name="password" ><br>
-            </div>
-            <button type="submit">Sign In</button>
+<div class="title"></div>
+<div class="container">
+    <div class="left"></div>
+    <div class="right">
+        <form action="index.php?p=login&action=signin" method="post">
+            <h1>Sign in</h1>
+            <p>Email</p>
+            <input id="email" type="email" name="email" class="input1"><br>
+
+            <p>Password</p>
+            <input id="password" type="password" name="password" class="input2"><br>
+
+            <input type="submit" class="btn" value="Sign in">
         </form>
     </div>
-</section>
+</div>
+
+
 </body>
+
+
 
 </html>

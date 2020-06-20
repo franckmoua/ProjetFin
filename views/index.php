@@ -8,76 +8,84 @@
     <title><?= $pageTitle; ?></title>
 </head>
 <body>
-<?php require ('partials/header.php'); ?>
+<?php require('partials/header.php'); ?>
+
+<?php if (isset($_SESSION['messages'])): ?>
+    <div>
+        <?php foreach ($_SESSION['messages'] as $message): ?>
+            <h3><?= $message ?></h3>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 
 <section class="section-carousel">
-<div class="slideshow-container">
-    <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="assets/images/slideshow/Nouveau-produit-pink.jpg" style="width:100%">
-    </div>
-    <div class="mySlides fade">
-        <img src="assets/images/slideshow/car2.jpg" style="width:100%">
-    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="assets/images/slideshow/Nouveau-produit-pink.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/images/slideshow/car2.jpg" style="width:100%">
+        </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
 
-<div class="bottom-slide">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-</div>
+    <div class="bottom-slide">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
 </section>
 
 <section>
     <h2>Trending now</h2>
     <?php foreach ($products as $product) : ?>
-       <img src="assets/images/product/<?= $product['image'] ?>" alt="<?= $product['image'] ?>">
+
+        <img src="assets/images/product/<?= $product['image'] ?>" alt="<?= $product['image'] ?>">
+        <a href=""><?= $product['name'] ?> </a>
+        <p><?= $product['price'] ?>€</p>
     <?php endforeach; ?>
 </section>
 
 <script>
-var slideIndex = 1;
-showSlides(slideIndex);
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-// Thumbnail image controls
-function currentSlide(n) {
-showSlides(slideIndex = n);
-}
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-function showSlides(n) {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");
-if (n > slides.length) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length}
-for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex-1].style.display = "block";
-dots[slideIndex-1].className += " active";
-}
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 </script>
 
 
-<?php if(isset($_SESSION['messages'])): ?>
-<div>
-    <?php foreach($_SESSION['messages'] as $message): ?>
-        <h3><?= $message ?></h3>
-    <?php endforeach; ?>
-</div>
-<?php endif; ?>
-<?php require ('partials/footer.php'); ?>
+<?php require('partials/footer.php'); ?>
 </body>
 </html>
 

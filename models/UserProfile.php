@@ -21,7 +21,7 @@ function getUserInformations($id)
 
         $db = dbConnect();
 
-        $get_user = $db->query('SELECT * FROM users WHERE id ='.$id);
+        $get_user = $db->prepare('SELECT * FROM users WHERE id ='.$id);
 
         $userInfo =  $get_user->fetchAll();
 

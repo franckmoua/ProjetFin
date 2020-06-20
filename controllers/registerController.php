@@ -34,8 +34,8 @@ if (isset($_GET['action'])) {
                 }
                 $resultInsert = insertDB();
                 if($resultInsert == true){
-                    $_SESSION['messages'][] = 'You are succesfully signed-up !';
-                    if($user){
+                    $_SESSION['messages'][] = 'You have succesfully signed up !';
+                    if($resultInsert){
                         $_SESSION['user'][] = $user;
                     }
                 }
